@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>insert the new task</h1>
+    <form action="/update/{{todo.Sno}}" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Update todo title</label>
+            <input type="text" class="form-control" name="title" id="title" value="{{todo.title}}" aria-describedby="emailHelp">
+             <div class="mb-3">
+            <label for="desc" class="form-label">descibe todo</label>
+            <input type="text" class="form-control" value="{{todo.desc}}" name="desc" id="desc">
+        </div>
+            <button type="update" class="btn btn-primary">update</button>
+    </form>
+{% if flag==1 %}
+    <h1>updated successfully<h1>
+{% endif %}
+{% endblock %}
